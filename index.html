@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recommendations Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Slides */
+    .mySlides {
+      display: none;
+      animation: fade 1.5s;
+      margin: center;
+      padding: 20px;
+      text-align: center;
+      background-color: #f1f1f1;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0.4;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Image styling */
+    .mySlides img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Dots */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Default light mode styles */
+    body {
+      background-color: white;
+      color: black;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    nav ul li a {
+      color: inherit;
+
+    }
+
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    #theme-toggle {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background-color: #0056b3;
+    }
+
+
+    header p {
+      background-color: red;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      /* text-align: center; */
+      transition: height 0.3s ease, border-radius 0.3s ease;
+      height: 50px;
+      /* Initial height */
+      width: 80%;
+      /* Width of the box */
+      max-width: 600px;
+      /* Maximum width */
+      display: flex;
+      justify-content: center;
+      align-content: flex-end;
+      flex-direction: column-reverse;
+
+    }
+
+    header p:hover {
+      height: 80px;
+      /* Height on hover */
+      border-radius: 25px;
+      font-size: larger;
+      /* Rounded corners on hover */
+    }
+
+    .king {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <!-- Add Font Awesome for the Instagram icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to Recommendations Hub</h1>
+    <div class="king">
+      <p>Professional reviews and picks just for you</p>
+    </div>
+    <!-- Add this button inside the <header> or wherever you prefer -->
+    <button id="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Explore Our Picks</h2>
+      <p>Discover curated lists of the best books and movies across genres. Dive into detailed recommendations, ratings,
+        and summaries.</p>
+    </section>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="m1.png" alt="Movie 1" style="width: 200px;">
+      </div>
+      <div class="mySlides">
+        <img src="b1.png" alt="Book 1" style="width: 210px;">
+      </div>
+      <div class="mySlides">
+        <img src="m2.png" alt="Movie 2" style="width: 200px;">
+      </div>
+      <div class="mySlides">
+        <img src="b2.png" alt="Book 2" style="width: 210px;">
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Fill out the form below to send us your feedback.</p>
+      <form action="https://formsubmit.co/std_shayan19186@mykasbit.edu.pk" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Recommendations Hub. All rights reserved.</p>
+    <p>
+      Follow us on:
+      <a href="https://www.instagram.com/shayanf.baig" target="_blank" style="text-decoration: none; color: inherit;">
+        <i class="fa fa-instagram" aria-hidden="true"></i> Instagram
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const button = document.getElementById('theme-toggle');
+      body.classList.toggle('dark-mode');
+      button.textContent = body.classList.contains('dark-mode') ? 'Switch to White Mode' : 'Switch to Dark Mode';
+    }
+  </script>
+</body>
+
+</html>

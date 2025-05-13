@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Recommendations</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Default light mode styles */
+    body {
+      background-color: white;
+      color: black;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    nav ul li a {
+      color: inherit;
+    }
+
+    nav ul li a:hover {
+      color: #007BFF;
+    }
+
+    #theme-toggle {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <!-- Add Font Awesome for the Instagram icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Movie & Series Recommendations</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
+  </header>
+
+  <main>
+    <section class="grid">
+      <!-- Movie 1 -->
+      <article>
+        <img src="m1.png" alt="The Avengers (2012)"style="width: 200px;" />
+        <h2>The Avengers (2012)</h2>
+        <p><strong>Director:</strong> Joss Whedon</p>
+        <p>The team of Earth's mightiest heroes assembles to save the world from Loki and his alien invasion.</p>
+      </article>
+
+      <!-- Movie 2 -->
+      <article>
+        <img src="m2.png"alt="America: The Winter Soldier"style="width: 200px;" />
+        <h2>Captain America: The Winter Soldier</h2>
+        <p><strong>Director:</strong> Anthony & Joe Russo</p>
+        <p>Steve Rogers struggles to adapt to modern times while uncovering a deadly conspiracy within S.H.I.E.L.D. involving his long-lost friend.</p>
+      </article>
+
+      <!-- Movie 3 -->
+      <article>
+        <img src="m3.png" alt="Game of Thrones Series"style="width: 200px;" />
+        <h2>Game of Thrones</h2>
+        <p><strong>Created by:</strong> David Benioff & D. B. Weiss</p>
+        <p>Seven noble families fight for control of the mythical land of Westeros. A massive fantasy epic filled with war, betrayal, and dragons.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Recommendations Hub. All rights reserved.</p>
+    <p>
+      Follow us on: 
+      <a href="https://www.instagram.com/shayanf.baig" target="_blank" style="text-decoration: none; color: inherit;">
+        <i class="fa fa-instagram" aria-hidden="true"></i> Instagram
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
